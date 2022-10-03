@@ -24,17 +24,27 @@ export default function Header({}: Props) {
         className="flex flex-row items-center"
       >
         <SocialIcon
-          url="https://www.youtube.com/arashhosseini"
+          url="https://www.facebook.com/arashhosseini"
           fgColor="gray"
           bgColor="transparent"
         />
         <SocialIcon
-          url="https://www.youtube.com/arashhosseini"
+          url="https://www.linkedin.com/arashhosseini"
           fgColor="gray"
           bgColor="transparent"
         />
         <SocialIcon
-          url="https://www.youtube.com/arashhosseini"
+          url="https://www.instagram.com/arashhosseini"
+          fgColor="gray"
+          bgColor="transparent"
+        />
+        <SocialIcon
+          url="https://www.telegram.com/arashhosseini"
+          fgColor="gray"
+          bgColor="transparent"
+        />
+        <SocialIcon
+          url="https://www.twitter.com/arashhosseini"
           fgColor="gray"
           bgColor="transparent"
         />
