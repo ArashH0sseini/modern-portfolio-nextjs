@@ -1,16 +1,17 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Header from "../components/Header";
 
 const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Arash's Portfolio</title>
       </Head>
 
-    <h1 className='text-blue-800'>lets build portfolio</h1>
+      <Header />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
