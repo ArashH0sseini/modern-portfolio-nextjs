@@ -61,9 +61,7 @@ export interface Project extends SanityBody {
 }
 
 export interface Social extends SanityBody {
-  _type: "image";
-  asset: {
-    _ref: string;
-    _type: "Reference";
-  };
+  _type: "social";
+  title:string;
+  url:string;
 }
