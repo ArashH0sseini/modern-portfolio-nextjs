@@ -5,17 +5,21 @@ import { motion } from "framer-motion";
 import jsLogo from "../assets/images/javascript.svg";
 import cssLogo from "../assets/images/css.svg";
 import htmlLogo from "../assets/images/html.svg";
+import { Experience } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  experience:Experience
+};
 
-export default function ExperienceCard({}: Props) {
+export default function ExperienceCard({experience}: Props) {
   return (
     <article
       className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px]
-     md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 opacity-40 hover:opacity-100
+     md:w-[600px] xl:w-[900px] snap-center bg-[#292929] py-5 opacity-40 hover:opacity-100
     cursor-pointer transition-opacity duration-200 overflow-hidden"
     >
-      <motion.div
+      <motion.img
         initial={{
           y: -100,
           opacity: 0,
@@ -23,46 +27,31 @@ export default function ExperienceCard({}: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="w-32 h-32 rounded-full overflow-hidden xl:w-[200px] xl:h-[200px] object-cover object-center"
-      >
-        <Image src={Retina} alt="" />
-      </motion.div>
-
+        className="w-32 h-32 overflow-hidden xl:w-[200px] xl:h-[200px] object-fill object-center"
+        src={urlFor(experience?.companyImage).url()}
+        alt=""
+      />
       <div className="px-0 md:px-10">
         <h4 className="text-2xl font-light">Frontend Developer at Retina</h4>
         <p className="font-bold text-2xl mt-1">RetinaTech</p>
         <div className="flex space-x-2 my-2">
-          <Image
-            className="rounded-full"
-            src={jsLogo}
+          {experience.technologies.map((technology) => (
+            <Image
+            key={technology._id}
+            src={urlFor(technology.image).url()}
             alt=""
             width={40}
             height={40}
           />
-          <Image
-            className="rounded-full"
-            src={cssLogo}
-            alt=""
-            width={40}
-            height={40}
-          />
-          <Image
-            className="rounded-full"
-            src={htmlLogo}
-            alt=""
-            width={40}
-            height={40}
-          />
+          ))}
         </div>
         <p className="uppercase py-5 text-gray-300">
-          Started work... - Ended...
+          {new Date(experience.dateStarted).toDateString()} - {" "}
+          {experience.isCurrentlyWorkingHere?'peresent':new Date(experience.dateEnded).toDateString()}
         </p>
 
-        <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>Summery points</li>
-          <li>Summery points</li>
-          <li>Summery points</li>
-          <li>Summery points</li>
+        <ul className="list-disc space-y-4 ml-5 text-lg max-h-40 pr-5 overflow-y-scroll">
+          {experience.points.map((point,i)=>(<li className="break-words w-60" key={i}>{point}</li>))}
         </ul>
       </div>
     </article>
