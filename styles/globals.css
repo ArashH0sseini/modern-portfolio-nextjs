@@ -37,3 +37,14 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(247 171 10);
 }
+
+
+body {
+  -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+text-decoration: none;
+}

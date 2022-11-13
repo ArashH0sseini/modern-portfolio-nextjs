@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -12,17 +13,19 @@ type Props = {
 
 export default function Skill({ directionLeft,skill }: Props) {
   return (
-    <div className="group relative flex cursor-pointer">
-      <motion.img
-        initial={{
-          x: directionLeft ? -200 : 200,
-        }}
-        transition={{ duration: 1 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        className="rounded-full border border-gray-500 object-cover w-24 h-24 md:w-28 md:h-28 xl:-32 xl:h-32 
+    <motion.div
+    initial={{
+      x: directionLeft ? -200 : 200,
+    }}
+    transition={{ duration: 1 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    className="group relative flex cursor-pointer rounded-full border border-gray-500">
+      <img
+        className="object-fill p-6 w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 
         filter group-hover:grayscale transition
         duration-300 ease-in-out"
         src={urlFor(skill.image).url()}
+        alt=""
       />
         {/* <Image src={urlFor(skill.image).url()} alt="" className="" /> */}
       {/* </motion.div> */}
@@ -34,6 +37,6 @@ export default function Skill({ directionLeft,skill }: Props) {
           <p className="text-3xl font-bold text-black opacity-100">{skill.progress}%</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

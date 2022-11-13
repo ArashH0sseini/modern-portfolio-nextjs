@@ -1,11 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  projects: Project[];
+};
 
-export default function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
+export default function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -19,7 +23,7 @@ export default function Projects({}: Props) {
       </h3>
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
-        {projects.map((project, index) => (
+        {projects?.map((project, index) => (
           <div
             key={index}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5
@@ -32,7 +36,7 @@ export default function Projects({}: Props) {
               viewport={{ once: true }}
             >
               <Image
-                src="https://qph.cf2.quoracdn.net/main-qimg-5283cad0ab7b31213c9cce145b1081f1"
+                src={urlFor(project?.image).url()}
                 width={602}
                 height={353}
                 alt=""
@@ -45,17 +49,22 @@ export default function Projects({}: Props) {
                 <span className="underline decoration-[#f7ab0a]/50">
                   Case Study {index + 1} of {projects.length}:
                 </span>{" "}
-                UPS clone
+                {project?.title}
               </h4>
 
+              <div className="flex justify-center items-center space-x-2">
+                {project.technologies?.map((technology) => (
+                  <img
+                    key={technology._id}
+                    src={urlFor(technology.image).url()}
+                    className="w-10 h-10"
+                    alt=""
+                  />
+                ))}
+              </div>
+
               <p className="text-lg text-justify md:text-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-                facilis nihil quibusdam explicabo perspiciatis alias eos
-                distinctio nobis fugit sequi asperiores dignissimos molestias
-                veritatis doloremque earum sed qui corrupti, reprehenderit
-                quisquam magnam adipisci eveniet voluptate. Quam, sequi!
-                Tenetur, doloremque. Nam sit, fugiat excepturi quia aspernatur
-                debitis! Eum cupiditate perspiciatis cum?
+                {project?.summary}
               </p>
             </div>
           </div>
