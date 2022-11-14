@@ -18,7 +18,7 @@ export default function About({pageInfo}: Props) {
       className="flex flex-col relative h-screen text-center md:text-left
   md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-14 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         About
       </h3>
       <motion.img
@@ -29,8 +29,8 @@ export default function About({pageInfo}: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full overflow-hidden object-cover
-        md:rounded-lg md:w-80 md:h-96 xl:w-[500px] xl:h-[500px]"
+        className="-mb-32 md:mb-0 flex-shrink-0 w-44 h-44 rounded-full overflow-hidden object-cover
+        md:rounded-lg md:w-80 md:h-96 xl:w-[400px] xl:h-[400px]"
         src={urlFor(pageInfo?.profilePic).url()}
       />
         {/* <Image src={urlFor(pageInfo?.profilePic).url()} width={224} height={224} alt="" />

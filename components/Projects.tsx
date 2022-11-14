@@ -22,7 +22,7 @@ export default function Projects({ projects }: Props) {
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 top-10">
         {projects?.map((project, index) => (
           <div
             key={index}
@@ -37,8 +37,8 @@ export default function Projects({ projects }: Props) {
             >
               <Image
                 src={urlFor(project?.image).url()}
-                width={602}
-                height={353}
+                width={300}
+                height={300}
                 alt=""
                 objectFit="cover"
               />
