@@ -4,10 +4,9 @@ import ExperienceCard from "./ExperienceCard";
 import { Experience } from "../typings";
 
 type Props = {
-  experiences:Experience[]
 };
 
-export default function WorkExperience({experiences}: Props) {
+export default function WorkExperience({}: Props) {
   return (
     <motion.div
     initial={{opacity:0}}
@@ -21,9 +20,9 @@ export default function WorkExperience({experiences}: Props) {
       </h3>
 
       <div className="mt-5 w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory">
-        {
+        {/* {
           experiences?.map(experience=><ExperienceCard key={experience._id} experience={experience} />)
-        }
+        } */}
       </div>
     </motion.div>
   );

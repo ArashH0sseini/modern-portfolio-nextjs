@@ -6,10 +6,9 @@ import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
 
 type Props = {
-  pageInfo:PageInfo
 };
 
-export default function About({pageInfo}: Props) {
+export default function About({}: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -31,7 +30,7 @@ export default function About({pageInfo}: Props) {
         viewport={{ once: true }}
         className="-mb-32 md:mb-0 flex-shrink-0 w-44 h-44 rounded-full overflow-hidden object-cover
         md:rounded-lg md:w-80 md:h-96 xl:w-[400px] xl:h-[400px]"
-        src={urlFor(pageInfo?.profilePic).url()}
+        src={avatarImage.src}
       />
         {/* <Image src={urlFor(pageInfo?.profilePic).url()} width={224} height={224} alt="" />
       </motion.div> */}
@@ -42,7 +41,6 @@ export default function About({pageInfo}: Props) {
           background
         </h4>
         <p className="text-base text-justify">
-          {pageInfo?.backgroundInformation}
         </p>
       </div>
     </motion.div>

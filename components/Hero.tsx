@@ -8,13 +8,12 @@ import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
 
 type Props = {
-  pageInfo: PageInfo;
 };
 
-export default function Hero({ pageInfo }: Props) {
+export default function Hero({  }: Props) {
   const [text, count] = useTypewriter({
     words: [
-      `Hi, The Name's ${pageInfo?.name}`,
+      `Hi, The Name's Arash Hosseini`,
       "Guy-who-love-Coffee.tsx",
       "<ButLovesToCodeMore />",
     ],
@@ -26,7 +25,7 @@ export default function Hero({ pageInfo }: Props) {
       <BackgroundCircles />
       <Image
         className="relative rounded-full mx-auto"
-        src={urlFor(pageInfo?.heroImage).url()}
+        src={avatarImage.src}
         alt=""
         width={128}
         height={128}
@@ -34,7 +33,7 @@ export default function Hero({ pageInfo }: Props) {
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-         {pageInfo?.role}
+         
         </h2>
         <h1 className="text-2xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
