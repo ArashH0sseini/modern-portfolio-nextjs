@@ -8,9 +8,12 @@ import { urlFor } from "../sanity";
 
 type Props = {
   directionLeft?: boolean;
+  progress:number;
+  image:string;
+  title:string;
 };
 
-export default function Skill({ directionLeft }: Props) {
+export default function Skill({ directionLeft,progress,image,title }: Props) {
   return (
     <motion.div
     initial={{
@@ -19,13 +22,13 @@ export default function Skill({ directionLeft }: Props) {
     transition={{ duration: 1 }}
     whileInView={{ opacity: 1, x: 0 }}
     className="group relative flex cursor-pointer rounded-full border border-gray-500">
-      {/* <img
+      <img
         className="object-fill p-6 w-24 h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 
         filter group-hover:grayscale transition
         duration-300 ease-in-out"
-        src={}
+        src={image}
         alt=""
-      /> */}
+      />
         {/* <Image src={urlFor(skill.image).url()} alt="" className="" /> */}
       {/* </motion.div> */}
       <div
@@ -33,7 +36,7 @@ export default function Skill({ directionLeft }: Props) {
       md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full z-0"
       >
         <div className="flex justify-center items-center h-full">
-          <p className="text-3xl font-bold text-black opacity-100">50%</p>
+          <p className="text-3xl font-bold text-black opacity-100">{progress}%</p>
         </div>
       </div>
     </motion.div>

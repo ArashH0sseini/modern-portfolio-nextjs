@@ -41,6 +41,7 @@ export default function About({}: Props) {
           background
         </h4>
         <p className="text-base text-justify">
+        I have an active and challenge-oriented personality, I am always one of the most active during my studies I was a student, I love active environments and I like content in the work environment To learn new things, value creation is my work goal and always for my goals I worked as hard as I could.
         </p>
       </div>
     </motion.div>

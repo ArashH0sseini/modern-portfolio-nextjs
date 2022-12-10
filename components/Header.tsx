@@ -27,7 +27,17 @@ export default function Header({  }: Props) {
         className="flex flex-row items-center"
       >
           <SocialIcon
-            url='twitter.com'
+            url='https://www.linkedin.com/arashhosseini'
+            fgColor="gray"
+            bgColor="transparent"
+          />
+          <SocialIcon
+            url='https://www.instagram.com/arash.h0sseini'
+            fgColor="gray"
+            bgColor="transparent"
+          />
+          <SocialIcon
+            url='https://t.me/Arash_Hosseini1'
             fgColor="gray"
             bgColor="transparent"
           />
