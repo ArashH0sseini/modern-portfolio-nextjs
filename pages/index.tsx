@@ -26,7 +26,6 @@ type Props = {
 };
 
 const Home = ({ pageInfo,experiences,projects,skills,socials }: Props) => {
-  console.log(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID)
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory font-vazir overflow-scroll z-0 overflow-x-hidden">
       <Head>
@@ -93,7 +92,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       socials,
     },
-
     revalidate:10,
   };
 };
