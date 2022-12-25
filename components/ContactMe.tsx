@@ -1,6 +1,8 @@
 import React from "react";
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
+
 
 type Props = {};
 
@@ -9,13 +11,39 @@ type Inputs = {
   email: string;
   subject: string;
   message: string;
+  number:string
 };
 
 export default function ContactMe({}: Props) {
-  const { register, handleSubmit } = useForm<Inputs>();
+  const { register, handleSubmit, reset } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:arashhosseini733@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}. 
-    ${formData.message} (${formData.email})`;
+    console.log(formData)
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status == 200) {
+        console.log('Response succeeded!')
+      }
+    })
+    toast.success("اطلاعات شما با موفقیت ثبت شد در اسرع وقت با شما تماس خواهیم گرفت.",
+    {
+      style: {
+        borderRadius: '10px',
+        background: '#fff',
+        color: '#333',
+        direction:'rtl',
+      },
+      duration: 8000,
+    }
+    );
+    
+    reset();
   }
 
   return (
@@ -52,37 +80,37 @@ export default function ContactMe({}: Props) {
         <form
           onSubmit={handleSubmit(onSubmit)}
           action=""
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-6 w-fit mx-auto"
         >
           <div className="flex space-x-2">
             <input
-              {...register("name")}
-              placeholder="Name"
+              {...register("name",{ required: "This is required." })}
+              placeholder="Name *"
               className="contactInput"
               type="text"
             />
             <input
-              {...register("email")}
-              placeholder="Email"
+              {...register("email",{ required: "This is required.",pattern: /^\S+@\S+$/i })}
+              placeholder="Email *"
               className="contactInput"
               type="email"
             />
+            
           </div>
-
           <input
-            {...register("subject")}
-            placeholder="Subject"
-            className="contactInput"
-            type="text"
-          />
+              {...register("number", {required: true, minLength: 6, maxLength: 12,pattern: /^09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}$/})}
+              placeholder="Mobile Number *"
+              className="contactInput"
+              type="text"
+            />
           <textarea
-            {...register("message")}
-            placeholder="Message"
+            {...register("message",{ required: "This is required." })}
+            placeholder="Message *"
             className="contactInput"
           />
           <button
             type="submit"
-            className="bg-[#f7ab0a] py-5 px-10 rounded-md text-white font-bold text-lg"
+            className="bg-[#f7ab0a]/40 hover:bg-[#f7ab0a]/50 drop-shadow-[0px_0px_4px_#f7ab0a] py-4 md:py-5 px-10 rounded-md text-white text-xl lg:text-2xl cursor-pointer"
           >
             Submit
           </button>

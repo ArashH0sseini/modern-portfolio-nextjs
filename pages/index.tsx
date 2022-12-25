@@ -6,19 +6,17 @@ import About from "../components/About";
 import ContactMe from "../components/ContactMe";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import Projects from "../components/Projects";
+import Project from "../components/Project";
 import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
 import avatarImage from "../assets/images/avatar3.jpg";
-import { Experience, PageInfo, Project, Skill, Social } from "../typings";
-
 
 type Props = {
 };
 
 const Home = ({ }: Props) => {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory font-vazir overflow-scroll z-0 overflow-x-hidden">
+    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory font-vazir overflow-scroll z-0 overflow-x-hidden ">
       <Head>
         <title>Arash Hosseini Portfolio</title>
       </Head>
@@ -42,7 +40,7 @@ const Home = ({ }: Props) => {
       </section>
 
       <section id="projects" className="snap-start">
-        <Projects />
+        <Project />
       </section>
 
       <section id="contact" className="snap-start">

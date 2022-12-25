@@ -1,12 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Retina from "../assets/images/retina.jpg";
 import { motion } from "framer-motion";
-import jsLogo from "../assets/images/javascript.svg";
-import cssLogo from "../assets/images/css.svg";
-import htmlLogo from "../assets/images/html.svg";
-import { Experience } from "../typings";
-import { urlFor } from "../sanity";
 
 type Props = {
   title:string,

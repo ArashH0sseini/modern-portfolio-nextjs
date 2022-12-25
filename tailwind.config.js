@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/img/noise.png')",
+      },
       fontFamily: {
         'vazir':['Vazir']
       }

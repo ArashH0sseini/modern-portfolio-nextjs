@@ -10,8 +10,8 @@
 
   .contactInput {
     @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424]
-    text-gray-500 placeholder-gray-500 transition-all focus:border-[#f7ab0a]/40
-    focus:text-[#f7ab0a]/40;
+    text-gray-200 placeholder-gray-300 transition-all focus:border-[#f7ab0a]/40
+    focus:text-white;
   }
 }
 
@@ -52,4 +52,21 @@ body {
 -ms-user-select: none;
 user-select: none;
 text-decoration: none;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #253341 inset;
+  box-shadow: 0 0 0px 1000px rgb(148 163 184 / 0.1) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  color: white;
 }
