@@ -1,15 +1,15 @@
 import React from "react";
 import Projects from "./Projects";
-import Netflix from "../assets/images/netflix.png";
-import Instagram from '../assets/images/Instagram.png'
-import Spotify from '../assets/images/Spotify.png'
-import Facebook from '../assets/images/Facebook.png'
-import Medium from '../assets/images/Medium.png'
-import Portfolio from '../assets/images/Portfolio.png'
-import Homacloud from '../assets/images/homacloud.png'
-import Shopping from '../assets/images/shoesshopping.png'
-import Turbo from '../assets/images/turbofarm.png'
-import Retina from '../assets/images/retina2.svg'
+import Netflix from "../public/avatar4.jpg";
+import Instagram from '../public/Instagram.png'
+import Spotify from '../public/Spotify.png'
+import Facebook from '../public/Facebook.png'
+import Medium from '../public/Medium.png'
+import Portfolio from '../public/Portfolio.png'
+import Homacloud from '../public/homacloud.png'
+import Shopping from '../public/shoesshopping.png'
+import Turbo from '../public/turbofarm.png'
+import Retina from '../public/retina2.svg'
 
 
 
