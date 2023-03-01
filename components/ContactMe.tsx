@@ -57,22 +57,22 @@ export default function ContactMe({}: Props) {
       <div className="flex flex-col space-y-5 mt-20">
         <h4 className="text-2xl md:text-3xl font-semibold text-center">
           I have got just what you need.{" "}
-          <span className="decoration-[#f7ab0a]/50 underline">Lets Talk.</span>
+          <span className="decoration-[#FF821E]/80 underline">Lets Talk.</span>
         </h4>
 
         <div className="space-y-2">
           <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-[#f7ab0a] h-7 w-7 animate-pulse" />
+            <PhoneIcon className="text-[#FF821E] h-7 w-7 animate-pulse" />
             <p className="text-2xl">+989103753764</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-[#f7ab0a] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">info.arashhosseini@gmail.com</p>
+            <EnvelopeIcon className="text-[#FF821E] h-7 w-7 animate-pulse" />
+            <p className="text-2xl">work.arashhosseini@gmail.com</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-[#f7ab0a] h-7 w-7 animate-pulse" />
+            <MapPinIcon className="text-[#FF821E] h-7 w-7 animate-pulse" />
             <p className="text-2xl">Tehran, Vanak sq, Kish Street, Iran</p>
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function ContactMe({}: Props) {
           />
           <button
             type="submit"
-            className="bg-[#f7ab0a]/40 hover:bg-[#f7ab0a]/50 drop-shadow-[0px_0px_4px_#f7ab0a] py-4 md:py-5 px-10 rounded-md text-white text-xl lg:text-2xl cursor-pointer"
+            className="bg-[#FF821E]/70 hover:bg-[#FF821E]/90 drop-shadow-[0px_0px_4px_#FF821E] py-4 md:py-5 px-10 rounded-md text-white text-xl lg:text-2xl cursor-pointer"
           >
             Submit
           </button>

@@ -5,7 +5,7 @@
 @layer components {
   .heroButton {
     @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs
-        tracking-widest text-gray-500 transition-all hover:border-[#f7ab0a]/40 hover:text-[#f7ab0a]/40;
+        tracking-widest text-gray-500 transition-all hover:border-[#FF821E]/40 hover:text-[#fff];
   }
 
   .contactInput {
@@ -34,13 +34,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(247 171 10 / 0.8);
+  background: #FF821E;
   border-radius: 50px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(247 171 10);
+  background: #ff9034;
 }
 
 

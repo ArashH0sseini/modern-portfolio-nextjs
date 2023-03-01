@@ -37,7 +37,7 @@ export default function Projects({
       />
       <div className="px-0 md:px-10 max-w-6xl space-x-4">
         <h4 className="text-2xl font-semibold text-center">
-          <span className="underline decoration-[#f7ab0a]/50 tracking-[3px]">
+          <span className="underline decoration-[#FF821E]/50 tracking-[3px]">
             Case Study {number} of 10:
           </span>{" "}
           <span className="tracking-[3px]">{title}</span>
@@ -51,14 +51,14 @@ export default function Projects({
 
         <Link href={demo}>
           <a target="_blank">
-            <button className="w-[45%] border-2 px-6 py-4 rounded-full border-[#f7ab0a]/40 hover:bg-[#f7ab0a]/50 hover:border-0">
+            <button className="w-[45%] border-2 px-6 py-4 rounded-full border-[#FF821E]/40 hover:bg-[#FF821E]/80 hover:border-0">
               Demo
             </button>
           </a>
         </Link>
         <Link href={github}>
           <a target="_blank">
-            <button className="w-[45%] border-2 px-6 py-4 rounded-full border-[#f7ab0a]/40 hover:bg-[#f7ab0a]/50 hover:border-0">
+            <button className="w-[45%] border-2 px-6 py-4 rounded-full border-[#FF821E]/40 hover:bg-[#FF821E]/80 hover:border-0">
               Github
             </button>
           </a>

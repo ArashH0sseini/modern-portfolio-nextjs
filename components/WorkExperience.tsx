@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import {motion} from 'framer-motion'
 import ExperienceCard from "./ExperienceCard";
 import { Experience } from "../typings";
+import { useDraggable } from "react-use-draggable-scroll";
+
 
 type Props = {
 };
 
 export default function WorkExperience({}: Props) {
+  const ref: any = useRef();
+  const { events } = useDraggable(ref);
+
   const technologies = {
       html:'https://cdn.sanity.io/images/7avre8mo/production/01f29ee7a80aaccf8598c7e2c1772a0bdb4a0675-2183x2500.svg',
       css:'https://cdn.sanity.io/images/7avre8mo/production/69d40c41866a27a49ca53e9f53a87f7c831198c6-2183x2500.svg',
@@ -14,7 +19,7 @@ export default function WorkExperience({}: Props) {
       react:'https://cdn.sanity.io/images/7avre8mo/production/ac9e7bfe893c827d96f3a6f8f500f4d1464811c7-23x20.svg',
       redux:'https://cdn.sanity.io/images/7avre8mo/production/430ebc1ab060cffd0c2bc008ca5000e8d1efd724-256x244.svg',
       nextjs:'https://cdn.sanity.io/images/7avre8mo/production/d837b12ad881e0c45152bd1d9eace3fc1ebd9f9c-207x124.svg',
-      TypeScript:'https://cdn.sanity.io/images/7avre8mo/production/2383515adbcd280bd637a25dd9b955611a48a14c-512x512.svg',
+      TypeScript:'https://cdn.sanity.io/images/7avre8mo/production/fd29d6f8b67afb457d22b9632474bf04c68a7d14-512x512.png',
       TailwindCss:'https://cdn.sanity.io/images/7avre8mo/production/40eae5fc193aede15ac989f2e27cbda281684cdd-1000x1000.svg',
       Bootstrap:'https://cdn.sanity.io/images/7avre8mo/production/bc804f31c56aaa93b2215a7980061adac375dc6e-512x408.svg',
       Sass:'https://cdn.sanity.io/images/7avre8mo/production/8b02e1feaa7335f4899752cface1181aa7e0d1fe-548x411.svg',
@@ -51,7 +56,10 @@ export default function WorkExperience({}: Props) {
         Experience
       </h3>
 
-      <div className="mt-5 w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory">
+      <div className="mt-5 w-full flex space-x-5 overflow-x-scroll p-10"
+      {...events}
+      ref={ref}
+      >
         <ExperienceCard title="Frontend Developer at HadidTech" 
         company="Hadidtech.inotex.com" 
         technology={[technologies.html,technologies.css,technologies.js,technologies.react,technologies.redux,technologies.nextjs, technologies.TailwindCss,technologies.TypeScript,technologies.Wordpress]} 
@@ -78,7 +86,7 @@ export default function WorkExperience({}: Props) {
         
         <ExperienceCard title="Software support & Media Expert" 
         company="Eseminar.tv" 
-        technology={[technologies.adobeconnect,technologies.camtasia]} 
+        technology={[technologies.adobeconnect,technologies.camtasia,technologies.aftereffects]} 
         date="2019-03-25 - 2022-02-14" 
         image="https://cdn.sanity.io/images/7avre8mo/production/97d46b72cacb8d670af7c3468a7dac10711de829-512x512.png"
         points={[points.Teamwork]}

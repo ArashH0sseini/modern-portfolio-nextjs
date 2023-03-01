@@ -1,4 +1,3 @@
-import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +15,7 @@ type Props = {
 
 const Home = ({ }: Props) => {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory font-vazir overflow-scroll z-0 overflow-x-hidden ">
+    <div className="bg-[#131313] bg-hero-pattern text-white h-screen font-vazir overflow-scroll z-0 overflow-x-hidden ">
       <Head>
         <title>Arash Hosseini Portfolio</title>
       </Head>
