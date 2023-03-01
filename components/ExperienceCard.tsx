@@ -16,7 +16,7 @@ export default function ExperienceCard({title,image,company,date,technology,poin
     <article
       className="flex flex-col rounded-lg items-center space-y-5 flex-shrink-0 w-[500px]
      md:w-[400px] xl:w-[600px] snap-center bg-[#292929] py-5 opacity-70 hover:opacity-100
-    cursor-pointer transition-opacity duration-200 overflow-hidden xl:mt-28 "
+    cursor-pointer transition-opacity duration-200 overflow-hidden xl:mt-28"
     >
       <motion.img
         initial={{
@@ -48,7 +48,7 @@ export default function ExperienceCard({title,image,company,date,technology,poin
           {date}
         </p>
 
-        <ul className="list-disc space-y-4 ml-5 text-lg max-h-40 pr-5 overflow-y-scroll">
+        <ul className="list-disc space-y-4 ml-5 text-lg max-h-40 pr-5 overflow-y-scroll scrollbar-hide">
           {points.map((point,index)=>(
             <li key={index} className="break-words w-72">{point}</li>
           ))}

@@ -80,9 +80,9 @@ export default function ContactMe({}: Props) {
         <form
           onSubmit={handleSubmit(onSubmit)}
           action=""
-          className="flex flex-col space-y-6 w-fit mx-auto"
+          className="flex flex-col space-y-6 w-full mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex flex-col sm:flex-row space-y-6 sm:space-y-0 sm:space-x-2 justify-between">
             <input
               {...register("name",{ required: "This is required." })}
               placeholder="Name *"

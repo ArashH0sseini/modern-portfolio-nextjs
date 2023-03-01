@@ -57,8 +57,8 @@ export default function WorkExperience({}: Props) {
       </h3>
 
       <div className="mt-5 w-full flex space-x-5 overflow-x-scroll p-10"
-      {...events}
-      ref={ref}
+        {...events}
+        ref={ref}
       >
         <ExperienceCard title="Frontend Developer at HadidTech" 
         company="Hadidtech.inotex.com" 
@@ -69,11 +69,11 @@ export default function WorkExperience({}: Props) {
         />
 
         <ExperienceCard title="Fronted Developer at RetinaTech" 
-        company="Retina.tech" 
-        technology={[technologies.html,technologies.css,technologies.js,technologies.Bootstrap]} 
-        date="2022-07-02 - PRESENT" 
-        image="https://cdn.sanity.io/images/7avre8mo/production/d2159df84c56016ebb47cf032543fb62c60c31e2-200x200.png"
-        points={[points.Teamwork]}
+          company="Retina.tech" 
+          technology={[technologies.html,technologies.css,technologies.js,technologies.Bootstrap]} 
+          date="2022-07-02 - PRESENT" 
+          image="https://cdn.sanity.io/images/7avre8mo/production/d2159df84c56016ebb47cf032543fb62c60c31e2-200x200.png"
+          points={[points.Teamwork]}
          />
 
         <ExperienceCard title="Frontend Developer at Homacloud" 
